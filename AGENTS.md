@@ -28,3 +28,10 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The wedding invitation lives in `src/components/invitation/` (one file per section, content in `data.ts`, official graphics referenced only via `assets.ts`) so copy and assets change without touching layout.
+- Official graphics are cut from the client's asset sheet and served as Lovable Assets pointers in `src/assets/official/`; never replace them with generated art.
+- Guestbook logic is pure functions in `wishes.ts` (React holds local state) so a backend can replace it without UI changes.
+- Background music is synthesised with Web Audio until `MUSIC_URL` in `useMusic.ts` points to a real track; playback only starts after the "Buka Undangan" tap.
